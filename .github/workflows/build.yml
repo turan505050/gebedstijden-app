@@ -29,7 +29,7 @@ jobs:
 
       - name: Generate signing key
         run: |
-          keytool -genkeypair -v -keystore release.keystore -alias appkey \
+          keytool -genkeypair -v -keystore "$GITHUB_WORKSPACE/release.keystore" -alias appkey \
             -keyalg RSA -keysize 2048 -validity 10000 \
             -storepass "${{ secrets.KEYSTORE_PASSWORD }}" \
             -keypass "${{ secrets.KEYSTORE_PASSWORD }}" \
@@ -40,7 +40,7 @@ jobs:
         run: |
           chmod +x ./gradlew
           ./gradlew bundleRelease \
-            -Pandroid.injected.signing.store.file=../release.keystore \
+            -Pandroid.injected.signing.store.file="$GITHUB_WORKSPACE/release.keystore" \
             -Pandroid.injected.signing.store.password="${{ secrets.KEYSTORE_PASSWORD }}" \
             -Pandroid.injected.signing.key.alias=appkey \
             -Pandroid.injected.signing.key.password="${{ secrets.KEYSTORE_PASSWORD }}"
