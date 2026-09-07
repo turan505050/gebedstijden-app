@@ -1,0 +1,17 @@
+{
+  "name": "Gebedstijden en Zikr",
+  "short_name": "Gebedstijden",
+  "description": "Wereldwijde gebedstijden, dagelijks Koranvers, zikr-teller en hasanah-uitdagingen.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#EFE9D9",
+  "theme_color": "#0E4B43",
+  "lang": "nl",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
